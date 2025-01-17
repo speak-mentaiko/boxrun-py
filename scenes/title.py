@@ -1,21 +1,22 @@
 import pygame
-import scene_base
-import running
 import sys
 
+from scenes.scene_base import SceneBase
+from scenes.running import Running
+
 sys.path.append("..")
-from characters import player_start
+from characters.player_start import PlayerStart
 
 
-class Title(scene_base):
+class Title(SceneBase):
     def __init__(self):
-        super
-        self.player = player_start()
+        super().__init__()
+        self.player = PlayerStart()
         self.start = False
 
     def update(self, screen):
-        super
-        self.player.update
+        super().update(screen)
+        self.player.update(screen)
         if pygame.key.get_pressed == pygame.K_SPACE:
             self.start = True
         if self.start:
@@ -25,4 +26,4 @@ class Title(scene_base):
                 self.flg = True
 
     def next_scene(self):
-        self.next = running()
+        self.next = Running()

@@ -1,13 +1,13 @@
-import player_base
+from characters.player_base import PlayerBase
 
 
-class Player_start(player_base):
+class PlayerStart(PlayerBase):
     def __init__(self):
-        image_path = "../images/box.png"
+        image_path = "images/box.png"
         super().__init__(image_path)
 
     def update(self, screen):
-        super(screen)
+        super().update(screen)
 
     def jump():
         super

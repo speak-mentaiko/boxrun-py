@@ -1,7 +1,7 @@
 import pygame
 
 
-class Player_base(pygame.sprite.Sprite):
+class PlayerBase(pygame.sprite.Sprite):
     def __init__(self, image_path):
         super().__init__()
         self.image = pygame.image.load(image_path).convert_alpha()
@@ -15,7 +15,7 @@ class Player_base(pygame.sprite.Sprite):
         self.v0 = 17
 
     def update(self, screen):
-        screen.bilt(self.image, self.image_obj)
+        screen.blit(self.image, self.image_obj)
 
     def jump(self):
         self.power += 1

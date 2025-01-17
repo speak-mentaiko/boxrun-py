@@ -2,8 +2,9 @@ import pygame
 
 
 class Enemy(pygame.sprite.Sprite):
-    def __init__(self, image_path):
+    def __init__(self):
         super().__init__()
+        image_path = "images/enemy.png"
         self.image = pygame.image.load(image_path).convert_alpha()
         self.image_obj = self.image.get_rect()
 

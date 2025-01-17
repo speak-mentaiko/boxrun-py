@@ -3,6 +3,9 @@ import sys
 import pygame
 from pygame.locals import *
 
+sys.path.append("..")
+from scenes import title
+
 # 画面サイズ 600×500
 SCREEN_SIZE = (600, 500)
 
@@ -18,8 +21,11 @@ def main():
     pygame.display.set_caption("Test")
 
     while True:
-        # 画面を黒色(#000000)に塗りつぶし
-        screen.fill((0, 0, 0))
+        scene = title.Title()
+        scene.update(screen)
+        if scene.is_finish():
+            scene.reset()
+            scene = scene.next_scene()
 
         # 画面を更新
         pygame.display.update()

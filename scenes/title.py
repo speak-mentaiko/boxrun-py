@@ -16,14 +16,16 @@ class Title(SceneBase):
 
     def update(self, screen):
         super().update(screen)
+
         self.player.update(screen)
-        if pygame.key.get_pressed == pygame.K_SPACE:
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_SPACE]:
             self.start = True
         if self.start:
-            self.player.jump
+            self.player.jump()
             self.player.update(screen)
-            if self.player.y == 370:
+            if self.player.image_obj.y == 370:
                 self.flg = True
 
     def next_scene(self):
-        self.next = Running()
+        return Running()

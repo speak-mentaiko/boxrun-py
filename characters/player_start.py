@@ -9,5 +9,5 @@ class PlayerStart(PlayerBase):
     def update(self, screen):
         super().update(screen)
 
-    def jump():
-        super
+    def jump(self):
+        super().jump()

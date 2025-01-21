@@ -4,7 +4,7 @@ import pygame
 from pygame.locals import *
 
 sys.path.append("..")
-from scenes import title
+from scenes.title import Title
 
 # 画面サイズ 600×500
 SCREEN_SIZE = (600, 500)
@@ -20,8 +20,9 @@ def main():
     # # タイトルバーの設定（表示する文字を指定）
     pygame.display.set_caption("Test")
 
+    scene = Title()
+
     while True:
-        scene = title.Title()
         scene.update(screen)
         if scene.is_finish():
             scene.reset()

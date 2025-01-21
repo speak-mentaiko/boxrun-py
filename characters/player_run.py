@@ -5,13 +5,13 @@ from characters.player_base import PlayerBase
 
 class PlayerRun(PlayerBase):
     def __init__(self):
-        self.image_path_0 = "../images/box_0.png"
-        self.image_path_1 = "../images/box_1.png"
-        super.__init__(self.image_path_0)
+        self.image_path_0 = "images/box_0.png"
+        self.image_path_1 = "images/box_1.png"
+        super().__init__(self.image_path_0)
         self.distance = 0
 
-    def update(self):
-        super
+    def update(self, screen):
+        super().update(screen)
         self.change_image()
         if self.jumping == False:
             if pygame.key.get_pressed == pygame.K_SPACE:

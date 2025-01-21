@@ -21,10 +21,8 @@ class Running(SceneBase):
         self.random_enemy = 0
 
     def update(self, screen):
-        super(screen)
+        super().update(screen)
         sprite_group = pygame.sprite.Group()
-        sprite_group.add(self.player)
-        sprite_group.add(self.back)
 
         self.back.update(screen)
         self.player.update

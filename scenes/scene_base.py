@@ -9,7 +9,6 @@ class SceneBase:
 
     def update(self, screen):
         # 背景画像の描画
-        print("scene base")
         screen.blit(self.bg, self.bg_obj)
 
     def is_finish(self):
